@@ -1,6 +1,9 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  justify-content: flex-start;
   background: white;
+  .container-fluid {
+    justify-content: flex-start;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

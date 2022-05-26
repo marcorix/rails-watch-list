@@ -1,0 +1,13 @@
+<h1><%= @list.name.capitalize %></h1>
+<%# List's Bookmark %>
+<%= link_to 'Add a Movie', new_list_bookmark_path(@list) %>
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, class: "movie-img rounded-top" %>
+      <%= bookmark.movie.title, %>
+      "<%= bookmark.comment %>"
+    </li>
+    <br>
+  <% end %>
+</ul>
