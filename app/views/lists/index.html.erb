@@ -1,6 +1,25 @@
-<h1>My Lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+<%# banner %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470);">
+  <div class="container">
+    <h1>Save any kind of movies!</h1>
+    <p>Create a List and add the movies you like.</p>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+      <h3 class="mb-0">My Lists</h3>
+      <%= link_to 'Create a new List', new_list_path, class: 'btn btn-flat' %>
+  </div>
+
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category">
+        <%= link_to list_path(list) do %>
+          <%= list.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

@@ -1,9 +1,6 @@
 .navbar-lewagon {
   justify-content: flex-start;
   background: white;
-  .container-fluid {
-    justify-content: flex-start;
-  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,4 +9,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  p {
+    margin: 0 8px;
+    font-weight: bold;
+  }
 }
