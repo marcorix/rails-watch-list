@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="container mb-5">
+<div class="container mb-5 py-5">
   <%# List's Bookmark %>
   <div class="d-flex align-items-center justify-content-between mb-3">
   <h3 class="mb-0">Bookmarks:</h3>
@@ -37,4 +37,27 @@
       </div>
     <% end %>
   </div>
+
+  <hr>
+
+  <%# REVIEWS %>
+  <h2>Leave a review</h2>
+  <ul>
+    <% @list.reviews.each do |review| %>
+      <li>
+        <% review.rating.times do %>
+          <i class="fas fa-star star-yellow"></i>
+        <% end %>
+        <p><%= review.comment %></p>
+        <hr>
+      </li>
+    <% end %>
+  </ul>
+
+  <h2>Reviews</h2>
+  <%= simple_form_for [@list, @review] do |f| %>
+  <%= f.input :comment, placeholder: "Add your review here..." %>
+  <%= f.input :rating,as: :select, collection: (1..5)%>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>
 </div>
