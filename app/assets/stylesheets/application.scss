@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans:wght@400;700&family=Raleway:wght@700&display=swap');
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -12,6 +13,13 @@
 @import "pages/index";
 
 
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+p {
+  color: gray;
+}
 
 li {
   margin: 0 8px;
